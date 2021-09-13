@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Cadastro Task</title>
+</head>
+<body>
+
+	<h1>Epic Task</h1>
+	
+	<h2>Nova Tarefa</h2>
+	
+	<form action="/task" method="post" th:object="${task}">
+		<label for="title">Titulo</label>
+		<input type="text" name="title" id="title" th:field="*{title}"/>
+		<span th:errors="*{title}"></span>
+		
+		<label for="description">Descrição</label>
+		<textarea id="description" name="description" rows="" cols="" th:field="*{description}"></textarea>		
+		<span th:errors="*{description}"></span>
+	
+		<label for="points">Pontos</label>
+		<input type="range" id="points" name="points" th:field="*{points}" min="10" max="100"/>
+		<span th:errors="*{points}"></span>
+	
+		<a href="/task">Cancelar</a>
+		<button>Salvar</button>
+	</form>
+	
+</body>
+</html>

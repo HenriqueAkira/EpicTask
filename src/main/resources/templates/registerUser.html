@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Cadastro User</title>
+</head>
+<body>
+	<h1>Epic Task</h1>
+	
+	<h2>Novo Usuário</h2>
+	
+	<form action="/user" method="post" th:object="${user}">
+		<label for="name">Nome</label>
+		<input type="text" name="name" id="name" th:field="*{name}"/>
+		<span th:errors="*{name}"></span>
+		
+		<label for="email">Email</label>
+		<input type="email" name="email" id="email" th:field="*{email}" />
+		<span th:errors="*{email}" ></span>
+		
+		<label for="password">Senha</label>
+		<input type="password" id="password" name="password" th:field="*{password}" />
+		<span th:errors="*{password}" ></span>
+		
+		<a href="/user">Cancelar</a>
+		<button>Salvar</button>
+	</form>
+
+</body>
+</html>
